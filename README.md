@@ -1,5 +1,6 @@
 # RSocket
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/08fb65a4bb214c23a8fe156f6e173c3b)](https://www.codacy.com/app/alnovoselov/rsocket-java?utm_source=github.com&utm_medium=referral&utm_content=qweek/rsocket-java&utm_campaign=badger)
 [![Join the chat at https://gitter.im/RSocket/reactivesocket-java](https://badges.gitter.im/RSocket/reactivesocket-java.svg)](https://gitter.im/RSocket/reactivesocket-java?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 RSocket is a binary protocol for use on byte stream transports such as TCP, WebSockets, and Aeron.
