@@ -33,6 +33,30 @@ dependencies {
 
 No releases to Maven Central or JCenter have occurred yet.
 
+## Tools
+
+[Snyk](https://snyk.io/) [![Known Vulnerabilities](https://snyk.io/test/github/qweek/rsocket-java/badge.svg)](https://snyk.io/test/github/qweek/rsocket-java)
+
+[Semaphore](https://semaphoreci.com) [![Build Status](https://semaphoreci.com/api/v1/qweek/rsocket-java/branches/1-0-x/shields_badge.svg)](https://semaphoreci.com/qweek/rsocket-java)
+
+[Codecov](https://codecov.io) [![codecov](https://codecov.io/gh/qweek/rsocket-java/branch/1.0.x/graph/badge.svg)](https://codecov.io/gh/qweek/rsocket-java)
+
+[Codacy](https://www.codacy.com) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/08fb65a4bb214c23a8fe156f6e173c3b)](https://www.codacy.com/app/alnovoselov/rsocket-java?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=qweek/rsocket-java&amp;utm_campaign=Badge_Grade)
+
+[Codebeat](https://codebeat.co) [![codebeat badge](https://codebeat.co/badges/24549025-d4cc-40b8-a522-d22268371dbe)](https://codebeat.co/projects/github-com-qweek-rsocket-java-1-0-x)
+
+[Better Code Hub](https://bettercodehub.com) [![BCH compliance](https://bettercodehub.com/edge/badge/qweek/rsocket-java?branch=1.0.x)](https://bettercodehub.com/)
+
+[Travis CI](https://travis-ci.org) [![Build Status](https://travis-ci.org/qweek/rsocket-java.svg?branch=1.0.x)](https://travis-ci.org/qweek/rsocket-java)
+
+[Gemnasium](https://gemnasium.com) [![Dependency Status](https://gemnasium.com/badges/github.com/qweek/rsocket-java.svg)](https://gemnasium.com/github.com/qweek/rsocket-java)
+
+[CircleCI](https://circleci.com) [![CircleCI](https://circleci.com/gh/qweek/rsocket-java.svg?style=svg)](https://circleci.com/gh/qweek/rsocket-java)
+
+[Coveralls](https://coveralls.io) [![Coverage Status](https://coveralls.io/repos/github/qweek/rsocket-java/badge.svg?branch=1.0.x)](https://coveralls.io/github/qweek/rsocket-java?branch=1.0.x)
+
+[CodeClimate](https://codeclimate.com)
+
 ## Development
 
 Install the google-java-format in Intellij, from Plugins preferences.
