@@ -35,7 +35,7 @@ No releases to Maven Central or JCenter have occurred yet.
 
 ## Tools
 
-[CircleCI](https://circleci.com) [![CircleCI](https://circleci.com/gh/qweek/rsocket-java.svg?style=svg)](https://circleci.com/gh/qweek/rsocket-java)
+[CircleCI](https://circleci.com) [![CircleCI](https://circleci.com/gh/qweek/rsocket-java.svg?style=shield)](https://circleci.com/gh/qweek/rsocket-java)
 
 [Travis CI](https://travis-ci.org) [![Build Status](https://travis-ci.org/qweek/rsocket-java.svg?branch=1.0.x)](https://travis-ci.org/qweek/rsocket-java)
 
@@ -52,6 +52,8 @@ No releases to Maven Central or JCenter have occurred yet.
 [Codeship](https://app.codeship.com) [![Codeship Status for qweek/rsocket-java](https://app.codeship.com/projects/cb0c9ab0-8854-0135-190f-026946df6204/status?branch=1.0.x)](https://app.codeship.com/projects/248464)
 
 [Wercker](https://app.wercker.com) [![wercker status](https://app.wercker.com/status/e2cee7efd15d4a2695e8cc1e01552507/s/master "wercker status")](https://app.wercker.com/project/byKey/e2cee7efd15d4a2695e8cc1e01552507)
+
+[VersionEye](https://www.versioneye.com) [![Dependency Status](https://www.versioneye.com/user/projects/59d417702de28c005199ae89/badge.svg?style=flat)](https://www.versioneye.com/user/projects/59d417702de28c005199ae89)
 
 [Snyk](https://snyk.io/) [![Known Vulnerabilities](https://snyk.io/test/github/qweek/rsocket-java/badge.svg)](https://snyk.io/test/github/qweek/rsocket-java)
 
