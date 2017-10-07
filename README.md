@@ -37,21 +37,21 @@ No releases to Maven Central or JCenter have occurred yet.
 
 [CircleCI](https://circleci.com) [![CircleCI](https://circleci.com/gh/qweek/rsocket-java.svg?style=shield)](https://circleci.com/gh/qweek/rsocket-java)
 
-[Travis CI](https://travis-ci.org) [![Build Status](https://travis-ci.org/qweek/rsocket-java.svg?branch=1.0.x)](https://travis-ci.org/qweek/rsocket-java)
+[Travis CI](https://travis-ci.org) [![Build Status](https://travis-ci.org/qweek/rsocket-java.svg?branch=feature/ci)](https://travis-ci.org/qweek/rsocket-java)
 
 [Semaphore](https://semaphoreci.com) [![Build Status](https://semaphoreci.com/api/v1/qweek/rsocket-java/branches/1-0-x/shields_badge.svg)](https://semaphoreci.com/qweek/rsocket-java)
 
-[Shippable](https://app.shippable.com) [![Run Status](https://api.shippable.com/projects/59cffb5c9ea08107008c7a36/badge?branch=1.0.x)](https://app.shippable.com/github/qweek/rsocket-java) [![Coverage Badge](https://api.shippable.com/projects/59cffb5c9ea08107008c7a36/coverageBadge?branch=1.0.x)](https://app.shippable.com/github/qweek/rsocket-java)
+[Shippable](https://app.shippable.com) [![Run Status](https://api.shippable.com/projects/59cffb5c9ea08107008c7a36/badge?branch=feature/ci)](https://app.shippable.com/github/qweek/rsocket-java) [![Coverage Badge](https://api.shippable.com/projects/59cffb5c9ea08107008c7a36/coverageBadge?branch=feature/ci)](https://app.shippable.com/github/qweek/rsocket-java)
 
 [AppVeyor](https://ci.appveyor.com) [![Build status](https://ci.appveyor.com/api/projects/status/2dtdi7fua85rbov5?svg=true)](https://ci.appveyor.com/project/qweek/rsocket-java)
 
-[Bitrise](https://www.bitrise.io) [![Build Status](https://www.bitrise.io/app/ff59b1f25934eac1/status.svg?token=4_4LGvHsGih2UBoC4BHHJA&branch=1.0.x)](https://www.bitrise.io/app/ff59b1f25934eac1)
+[Bitrise](https://www.bitrise.io) [![Build Status](https://www.bitrise.io/app/ff59b1f25934eac1/status.svg?token=4_4LGvHsGih2UBoC4BHHJA&branch=feature/ci)](https://www.bitrise.io/app/ff59b1f25934eac1)
 
-[CodeFresh](https://g.codefresh.io) [![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=qweek&repoName=rsocket-java&branch=1.0.x&pipelineName=rsocket-java&accountName=qweek&type=cf-1)]( https://g.codefresh.io/repositories/qweek/rsocket-java/builds?filter=trigger:build;branch:1.0.x;service:59d00fc413a5900001d43380~rsocket-java)
+[CodeFresh](https://g.codefresh.io) [![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=qweek&repoName=rsocket-java&branch=feature/ci&pipelineName=rsocket-java&accountName=qweek&type=cf-1)]( https://g.codefresh.io/repositories/qweek/rsocket-java/builds?filter=trigger:build;branch:feature/ci;service:59d00fc413a5900001d43380~rsocket-java)
 
-[Codeship](https://app.codeship.com) [![Codeship Status for qweek/rsocket-java](https://app.codeship.com/projects/cb0c9ab0-8854-0135-190f-026946df6204/status?branch=1.0.x)](https://app.codeship.com/projects/248464)
+[Codeship](https://app.codeship.com) [![Codeship Status for qweek/rsocket-java](https://app.codeship.com/projects/cb0c9ab0-8854-0135-190f-026946df6204/status?branch=feature/ci)](https://app.codeship.com/projects/248464)
 
-[Wercker](https://app.wercker.com) [![wercker status](https://app.wercker.com/status/e2cee7efd15d4a2695e8cc1e01552507/s/master "wercker status")](https://app.wercker.com/project/byKey/e2cee7efd15d4a2695e8cc1e01552507)
+[Wercker](https://app.wercker.com) [![wercker status](https://app.wercker.com/status/e2cee7efd15d4a2695e8cc1e01552507/s/feature/ci "wercker status")](https://app.wercker.com/project/byKey/e2cee7efd15d4a2695e8cc1e01552507)
 
 [VersionEye](https://www.versioneye.com) [![Dependency Status](https://www.versioneye.com/user/projects/59d417702de28c005199ae89/badge.svg?style=flat)](https://www.versioneye.com/user/projects/59d417702de28c005199ae89)
 
@@ -59,13 +59,13 @@ No releases to Maven Central or JCenter have occurred yet.
 
 [Codacy](https://www.codacy.com) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/08fb65a4bb214c23a8fe156f6e173c3b)](https://www.codacy.com/app/alnovoselov/rsocket-java?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=qweek/rsocket-java&amp;utm_campaign=Badge_Grade)
 
-[Codebeat](https://codebeat.co) [![codebeat badge](https://codebeat.co/badges/24549025-d4cc-40b8-a522-d22268371dbe)](https://codebeat.co/projects/github-com-qweek-rsocket-java-1-0-x)
+[Codebeat](https://codebeat.co) [![codebeat badge](https://codebeat.co/badges/24549025-d4cc-40b8-a522-d22268371dbe)](https://codebeat.co/projects/github-com-qweek-rsocket-java-feature-ci)
 
-[Better Code Hub](https://bettercodehub.com) [![BCH compliance](https://bettercodehub.com/edge/badge/qweek/rsocket-java?branch=1.0.x)](https://bettercodehub.com/)
+[Better Code Hub](https://bettercodehub.com) [![BCH compliance](https://bettercodehub.com/edge/badge/qweek/rsocket-java?branch=feature/ci)](https://bettercodehub.com/)
 
-[Codecov](https://codecov.io) [![codecov](https://codecov.io/gh/qweek/rsocket-java/branch/1.0.x/graph/badge.svg)](https://codecov.io/gh/qweek/rsocket-java)
+[Codecov](https://codecov.io) [![codecov](https://codecov.io/gh/qweek/rsocket-java/branch/feature/ci/graph/badge.svg)](https://codecov.io/gh/qweek/rsocket-java)
 
-[Coveralls](https://coveralls.io) [![Coverage Status](https://coveralls.io/repos/github/qweek/rsocket-java/badge.svg?branch=1.0.x)](https://coveralls.io/github/qweek/rsocket-java?branch=1.0.x)
+[Coveralls](https://coveralls.io) [![Coverage Status](https://coveralls.io/repos/github/qweek/rsocket-java/badge.svg?branch=feature/ci)](https://coveralls.io/github/qweek/rsocket-java?branch=feature/ci)
 
 [Gemnasium](https://gemnasium.com) [![Dependency Status](https://gemnasium.com/badges/github.com/qweek/rsocket-java.svg)](https://gemnasium.com/github.com/qweek/rsocket-java)
 
