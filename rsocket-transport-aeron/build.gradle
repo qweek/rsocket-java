@@ -17,6 +17,7 @@
 dependencies {
     compile project(':rsocket-core')
     compile "io.aeron:aeron-all:$aeronVersion"
+    compile "javax.annotation:javax.annotation-api:$javaxAnnotationVersion"
 
     testCompile project(':rsocket-test')
 }
