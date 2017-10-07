@@ -1,0 +1,14 @@
+engines:
+  markdownlint:
+    enabled: true
+  shellcheck:
+    enabled: true
+  checkstyle:
+    enabled: true
+  pmd:
+    enabled: true
+ratings:
+  paths:
+  - "**.md"
+  - "**.sh"
+  - "**.java"
