@@ -1,0 +1,16 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+env:
+  - TRAVIS_PULL_REQUEST=true
+
+branches:
+  only:
+    - feature/ci
+
+build:
+  ci:
+    - gradle assemble
+    - gradle check

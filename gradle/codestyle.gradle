@@ -7,5 +7,6 @@ googleJavaFormat {
     toolVersion = '1.4'
 }
 
-// NOTE: uncomment to force code formatting before compile
-compileJava.dependsOn tasks.googleJavaFormat
+if (!isCI) {
+    compileJava.dependsOn tasks.googleJavaFormat
+}

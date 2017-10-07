@@ -3,6 +3,8 @@ task wrapper(type: Wrapper) {
     distributionType = Wrapper.DistributionType.BIN
 }
 
+ext.isCI = System.getenv('CONTINUOUS_INTEGRATION') != null || System.getenv('CI' ) != null
+
 repositories {
     jcenter()
 }
