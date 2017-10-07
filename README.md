@@ -69,7 +69,7 @@ No releases to Maven Central or JCenter have occurred yet.
 
 [Gemnasium](https://gemnasium.com) [![Dependency Status](https://gemnasium.com/badges/github.com/qweek/rsocket-java.svg)](https://gemnasium.com/github.com/qweek/rsocket-java)
 
-[Code Climate](https://codeclimate.com)
+[Code Climate](https://codeclimate.com) [![Code Climate](https://codeclimate.com/github/qweek/rsocket-java/badges/gpa.svg)](https://codeclimate.com/github/qweek/rsocket-java) [![Test Coverage](https://codeclimate.com/github/qweek/rsocket-java/badges/coverage.svg)](https://codeclimate.com/github/qweek/rsocket-java/coverage) [![Issue Count](https://codeclimate.com/github/qweek/rsocket-java/badges/issue_count.svg)](https://codeclimate.com/github/qweek/rsocket-java)
 
 ## Development
 
