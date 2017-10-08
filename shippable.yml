@@ -5,6 +5,7 @@ jdk:
 
 env:
   - TRAVIS_PULL_REQUEST=true
+  - CODECOV_TOKEN=84833afd-2ab1-4c0c-98c9-6cc3a2015bef
 
 branches:
   only:
