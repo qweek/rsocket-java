@@ -1,6 +1,6 @@
 /* Java compiler settings */
 
-apply plugin: 'java'
+//apply plugin: 'java'
 
 ext {
     isJava9 = System.getenv('TRAVIS_JDK_VERSION') == 'oraclejdk9'

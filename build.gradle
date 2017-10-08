@@ -36,10 +36,11 @@ apply from: "$rootDir/gradle/scan.gradle"
 
 description = 'RSocket: stream oriented messaging passing with Reactive Stream semantics.'
 
+apply from: "$rootDir/gradle/coverage.gradle"
+
 subprojects {
     apply from: "$rootDir/gradle/java.gradle"
     apply from: "$rootDir/gradle/codestyle.gradle"
-    apply from: "$rootDir/gradle/coverage.gradle"
 
     apply plugin: 'maven'
     apply plugin: 'maven-publish'
