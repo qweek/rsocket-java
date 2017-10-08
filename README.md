@@ -59,7 +59,7 @@ No releases to Maven Central or JCenter have occurred yet.
 
 [Codacy](https://www.codacy.com) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/08fb65a4bb214c23a8fe156f6e173c3b)](https://www.codacy.com/app/alnovoselov/rsocket-java?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=qweek/rsocket-java&amp;utm_campaign=Badge_Grade)
 
-[Codebeat](https://codebeat.co) [![codebeat badge](https://codebeat.co/badges/24549025-d4cc-40b8-a522-d22268371dbe)](https://codebeat.co/projects/github-com-qweek-rsocket-java-feature-ci)
+[Codebeat](https://codebeat.co) [![codebeat badge](https://codebeat.co/badges/1d4984ff-f36b-4c74-b5a4-f15ad4bca24e)](https://codebeat.co/projects/github-com-qweek-rsocket-java-feature-ci)
 
 [Better Code Hub](https://bettercodehub.com) [![BCH compliance](https://bettercodehub.com/edge/badge/qweek/rsocket-java?branch=feature/ci)](https://bettercodehub.com/)
 
@@ -70,6 +70,12 @@ No releases to Maven Central or JCenter have occurred yet.
 [Gemnasium](https://gemnasium.com) [![Dependency Status](https://gemnasium.com/badges/github.com/qweek/rsocket-java.svg)](https://gemnasium.com/github.com/qweek/rsocket-java)
 
 [Code Climate](https://codeclimate.com) [![Code Climate](https://codeclimate.com/github/qweek/rsocket-java/badges/gpa.svg)](https://codeclimate.com/github/qweek/rsocket-java) [![Test Coverage](https://codeclimate.com/github/qweek/rsocket-java/badges/coverage.svg)](https://codeclimate.com/github/qweek/rsocket-java/coverage) [![Issue Count](https://codeclimate.com/github/qweek/rsocket-java/badges/issue_count.svg)](https://codeclimate.com/github/qweek/rsocket-java)
+
+[Coverity](https://scan.coverity.com) [![Coverity Scan Build Status](https://scan.coverity.com/projects/13959/badge.svg)](https://scan.coverity.com/projects/qweek-rsocket-java)
+
+[SonarCloud](https://sonarcloud.io)
+
+[SourceClear](https://qweek.sourceclear.io)
 
 ## Development
 
