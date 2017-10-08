@@ -9,14 +9,40 @@ addons:
     packages:
       - oracle-java8-installer
       - oracle-java9-installer
+  coverity_scan:
+    # GitHub project metadata
+    project:
+      name: qweek/rsocket-java
+      version: 0.9
+      description: RSocket Java (experimental)
+    # The command that will be added as an argument to "cov-build" to compile your project for analysis
+    build_command: ./gradlew assemble
+    # Pattern to match selecting branches that will run analysis
+    branch_pattern: coverity_scan
+  sonarcloud:
+    organization: "qweek:rsocket-java"
+    branches:
+      - feature/ci
+  srcclr: true
 
 dist: trusty
 #group: edge
 sudo: false
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 
+# codeclimate
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 # script for build and release via Travis to Bintray
 script: gradle/buildViaTravis.sh
+
+# codeclimate
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - sonar-scanner
 
 # cache between builds
 before_cache:
