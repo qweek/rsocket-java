@@ -39,6 +39,7 @@ description = 'RSocket: stream oriented messaging passing with Reactive Stream s
 subprojects {
     apply from: "$rootDir/gradle/java.gradle"
     apply from: "$rootDir/gradle/codestyle.gradle"
+    apply from: "$rootDir/gradle/coverage.gradle"
 
     apply plugin: 'maven'
     apply plugin: 'maven-publish'
