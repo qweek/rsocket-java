@@ -17,5 +17,5 @@ build:
     - gradle check
     - mkdir -p shippable/codecoverage
     - gradle jacocoRootReport
-    - cp -r target shippable/codecoverage
+    - cp -r build shippable/codecoverage
     - bash <(curl -s https://codecov.io/bash)
