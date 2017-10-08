@@ -3,6 +3,9 @@ jdk:
 - oraclejdk8
 - oraclejdk9
 
+before_install:
+      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
 # force upgrade Java8 as per https://github.com/travis-ci/travis-ci/issues/4042 (fixes compilation issue)
 addons:
   apt:
@@ -10,17 +13,16 @@ addons:
       - oracle-java8-installer
       - oracle-java9-installer
   coverity_scan:
-    # GitHub project metadata
     project:
-      name: qweek/rsocket-java
+      name: "qweek/rsocket-java"
       version: 0.9
-      description: RSocket Java (experimental)
-    # The command that will be added as an argument to "cov-build" to compile your project for analysis
-    build_command: ./gradlew assemble
-    # Pattern to match selecting branches that will run analysis
+      description: "RSocket Java (experimental)"
+    notification_email: alnovoselov@mail.ru
+    build_command_prepend: "./gradlew clean"
+    build_command: "./gradlew assemble"
     branch_pattern: coverity_scan
   sonarcloud:
-    organization: "qweek:rsocket-java"
+    organization: "qweek-github"
     branches:
       - feature/ci
   srcclr: true
