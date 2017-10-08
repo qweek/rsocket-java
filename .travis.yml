@@ -3,23 +3,12 @@ jdk:
 - oraclejdk8
 - oraclejdk9
 
-before_install:
-  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-
 # force upgrade Java8 as per https://github.com/travis-ci/travis-ci/issues/4042 (fixes compilation issue)
 addons:
   apt:
     packages:
       - oracle-java8-installer
       - oracle-java9-installer
-  coverity_scan:
-    project:
-      name: "qweek/rsocket-java"
-      description: "Build submitted via Travis CI"
-    notification_email: alnovoselov@mail.ru
-    build_command_prepend: "./gradlew clean"
-    build_command: "./gradlew assemble"
-    branch_pattern: feature/ci
   sonarcloud:
     organization: "qweek-github"
     branches:
@@ -60,5 +49,3 @@ env:
   - secure: "mbB+rv9eWUFQ9/yr2REH2ztH6r/Uq7cq/OJ5WK6yFp0TmPzlJ8jbEVwe/sdAMW2E4qrfMu1c2h3qsVm41pNx0MwEsIW/lTIZRiRmNYon32n+SHlRWyTn8dJeY/p1HoHs450OjLgB4X4jmRmfSt8IQ/w9ZCjF6HVcgR4ctt+myECTNcRidEIOahljnSJmnFFDsKbt2UJN96AfvvhbxcarEKgKLXLd9tQT2GlvEOM+hVOY9hKD5FvIoRp9heyCEAsSBXe+MIWQlh4jx+B4zCajZJ+8KN6M8KIt40lV8z4Zbc11jgq/xULJwkQIuVZvkJ3huIfUrxwLPgYWeai/TR/m3+2jy1hFajt96pnhJzFEz0IBL0wFALwAY1n2R/6uugEUYnDsFcGQGTsO5OeeOixiRPH5HNgfOhInqJoFh/887f+gq7OLXjlRCTsw+S9KknZ3iBpHX/+khurfAUC9khiMvufEq6Wyu0TvxhmGERFrs7uugeJ1VA85SDVQ6Au9MV831PeBGqzHpYG7w2kJj1EiFjBRUhCthxyDfX2b04egozlKF8JEifZ9EVj7pNMQUvVG2c9Wj6M0fG84NusnlZlA16XxAmfLevc9b/BOSSrqc2r9Z1ZvxFnBPP9H94Uqt9ZninhW/T49jRF+lQzD45MTVogzVk77XtdpzUemf4t5mHc="
   - secure: "GcPu3U4o2Dp7QLCqaAo3mGMJTl9yd+w+elXqqt7WDjrjm5p8mrzvQfyiJA7mRJVDTGpgib8fLctL1X1+QOX4fNKElrDUFhE3bWAqwVwHGPK4D3HCb6THD5XVqE4qcPmdLWPkvJ9ZY5nSIfuRVASjZTcc4XSXISK2jUSGar0PNYlo62/OFGvNvMz/qINU9RU7iYdDlL19yd72TKDfuK0UOKhQEGypamEHam3SMNCw/p8Q5K1vQe+Oba3ILCvYHJvqWc2NLjRXJjXfIaOq/NpCK6Lx2U9etdpkb5lyW5Cx1lkzIcRUq8ZUCwbkHog9LJoZGrZFh5AzlZ6kRuejBqu7AISmZy4s9HVAb7AQmNxvXkK9EIt8lavcaHnLYUIfuxvBqK/ptcUN5P/KXCs1DsbpADjB7YbUu/EQ2OAWncV31Z+O4uMHV29eGTtaz9LoK28+mHRfFHqoazWyuUejor6iSSkrCeqsLEvU8o6rH4oenKz7hLlZsJqHGACYtYNYi2CXYlTu0bMX+Hb1EtTu6Awm9Gn04TqVdmNexgF5CdqW4A696i6jlkPpVCt4B4nq4VPs2RMTkjVl3B7uOkDm18u35dncuhgsnMfVmo9cWX5COeyefdh6kdnKsUf0+IPbV/hix/OCP72dpuhxgcyzN+DvaVLzX7YOx7TpJTzPSKNEQZc="
   - secure: "UFJEzDEv6H2Qscg9UgZFVJq5oFvq7nQkVoSuGfh5Y4ZhL9PCK5f3Ft9oYEZOQwXaxWD1qivtJjQV3DdBiqsHkrnPrJ0hi3iYVDJo26xLNtu3welFw5Veqmgu2NuwjaDn6cjRFCJRLzpszMUWO1DvfLJTs3LuJDuXEyAKDw9eQgfOakqO4xeloyXgM7xnoXz11rgqtJNU6snjVPHftXNPTHGsNDlTR7SAIbjYwLMbdIKM2qjzrXkg+a94QOz2stnTDz9V5iYNH+3XXCcYxD9nb1Ol1XGWvtDnNGEhtGmylLdjHXwGLHiW2HOXskLzSkm7ASie1WdyHVHZb4X8LjxCy62S0FPevBgat1a443Khx5HCMYR/8dQrlOI82GYTr8n9U6QQE4Li8XLw64DVP9HGs9jdbsfEdlIsiPWqB6ujlwiO6pyfmQGQCgjALA+oD87uDQLcgh+SDYgE0ZwmwGzbjeynZpoCrEE8A1GHhSwkM9khx6EJFacm9XzqoUGK0wB1f8su+51fqPglF1zye80IFA4wOMMAY+KUc9du/vQ98f0lfjsNSOC02CKYxbA5RaakQMAYjirsZraA57xLmCSIGMhhW4wClQdJBww6LLz463yZU4WPwyqU+ZW12aV5dVLb5RWXIbZKmdT74DfZajHvqgTYpb05L5cJl7ApMspUkKk="
-  - secure: "I0gCY6PvAjWSU34swioYgpmtrSsnc3N0hDkWD54fxhl9jHshj/vrCmZaUgt+Pl0AZ4lR2Kj4+jholGwJFAyReLP5dRu6SDdEbqSNRbImA85YTD+a/ewIMSOjQNg71nMcbZq3ZkaDb2/GnVRwSXUcxS7HONtm9hL0N7kTzccAK5BPgx9MItl0BT0KrpVjBxHfsNQ0o878XPvBeNl480t6XAnC8KluUDDYpGgiYMNzWiR2yTLmmmDy6+KRGp664uPyl0Vp/8DkVursI+ecHKEmWhWeUqn2LOD7KNTPz64pI2VEjvC2TIsfrrsObyMRJyVqou8oaysw/oraSAt2yuzz889l+bnrwZrV6a1pgfBQoDhclnYWY/IPBln2SRnys2fBfDhltirlbMZyTkZoCa+Tmd2Igr18QY6/apJvN2V0VWgedyVFAx3C5os4PrRsOxIuKJmTKuS0uPr+XiQJsl9wHK3r8Xb81qHm/lssu/QhiBSnmxuQAAkp1Mbqrpz97I3j11IoCxdQLctjQjguWWHWWpq/SZVkhWC8Orr8dtsQ9YaTmeALYKJWMGEFUSmwskGpnEAtNli655SbETqLvXQIYdbcV/4/yEm2q6MmxBKkQaouZ2x6/FzP0FElvO3BA1ys6Q3SE5GlMl/vB3zesHbo7yjFCkd56nFna5oqml0W6e8="
-
