@@ -27,7 +27,8 @@ before_script:
   - ./cc-test-reporter before-build
 
 # script for build and release via Travis to Bintray
-script: gradle/buildViaTravis.sh
+script: # gradle/buildViaTravis.sh
+  - ./gradlew build
 
 # codeclimate
 after_script:
