@@ -1,4 +1,7 @@
-engines:
+version: "2"
+plugins:
+  fixme:
+    enabled: false
   markdownlint:
     enabled: true
   shellcheck:
@@ -7,8 +10,3 @@ engines:
     enabled: true
   pmd:
     enabled: true
-ratings:
-  paths:
-  - "**.md"
-  - "**.sh"
-  - "**.java"
