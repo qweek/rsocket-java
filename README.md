@@ -69,7 +69,7 @@ No releases to Maven Central or JCenter have occurred yet.
 
 [Gemnasium](https://gemnasium.com) [![Dependency Status](https://gemnasium.com/badges/github.com/qweek/rsocket-java.svg)](https://gemnasium.com/github.com/qweek/rsocket-java)
 
-[Code Climate](https://codeclimate.com) [![Code Climate](https://codeclimate.com/github/qweek/rsocket-java/badges/gpa.svg)](https://codeclimate.com/github/qweek/rsocket-java) [![Test Coverage](https://codeclimate.com/github/qweek/rsocket-java/badges/coverage.svg)](https://codeclimate.com/github/qweek/rsocket-java/coverage) [![Issue Count](https://codeclimate.com/github/qweek/rsocket-java/badges/issue_count.svg)](https://codeclimate.com/github/qweek/rsocket-java)
+[Code Climate](https://codeclimate.com) [![Code Climate](https://codeclimate.com/github/qweek/rsocket-java/badges/gpa.svg)](https://codeclimate.com/github/qweek/rsocket-java) [![Maintainability](https://api.codeclimate.com/v1/badges/c36def6856bc2405e858/maintainability)](https://codeclimate.com/github/qweek/rsocket-java/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c36def6856bc2405e858/test_coverage)](https://codeclimate.com/github/qweek/rsocket-java/test_coverage) [![Test Coverage](https://codeclimate.com/github/qweek/rsocket-java/badges/coverage.svg)](https://codeclimate.com/github/qweek/rsocket-java/coverage) [![Issue Count](https://codeclimate.com/github/qweek/rsocket-java/badges/issue_count.svg)](https://codeclimate.com/github/qweek/rsocket-java)
 
 [Coverity](https://scan.coverity.com) [![Coverity Scan Build Status](https://scan.coverity.com/projects/13959/badge.svg)](https://scan.coverity.com/projects/qweek-rsocket-java)
 

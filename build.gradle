@@ -18,6 +18,17 @@
 NOTE: plugins block cannot be used in script plugins
 TODO: future versions of Gradle will remove this restriction
 */
+
+// TODO: https://github.com/gradle/gradle/issues/1037
+buildscript {
+    repositories {
+        maven { url ArtifactRepositoryContainer.MAVEN_CENTRAL_URL }
+    }
+    dependencies {
+        classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.1")
+    }
+}
+
 plugins {
     id 'com.gradle.build-scan' version '1.9' // declare before any other plugin
 
@@ -38,6 +49,7 @@ description = 'RSocket: stream oriented messaging passing with Reactive Stream s
 
 subprojects {
     apply from: "$rootDir/gradle/java.gradle"
+    apply from: "$rootDir/gradle/test.gradle"
     apply from: "$rootDir/gradle/codestyle.gradle"
 
     apply plugin: 'maven'
@@ -73,7 +85,6 @@ subprojects {
         compile "org.slf4j:slf4j-api:$slf4jVersion"
         compile "com.google.code.findbugs:jsr305:$jsr305Version"
 
-        testCompile "junit:junit:$junitVersion"
         testCompile "org.mockito:mockito-core:$mockitoVersion"
         testCompile "org.hamcrest:hamcrest-library:$hamcrestVersion"
         testCompile "org.slf4j:slf4j-log4j12:$slf4jVersion"
