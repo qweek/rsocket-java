@@ -35,6 +35,7 @@ import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 
 /** */
+@Tag("travis-ci")
 public class AeronChannelTest {
   static {
     // System.setProperty("aeron.publication.linger.timeout", String.valueOf(50_000_000_000L));
@@ -42,7 +43,6 @@ public class AeronChannelTest {
     MediaDriverHolder.getInstance();
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPing() {
     int count = 5_000_000;
@@ -163,43 +163,36 @@ public class AeronChannelTest {
     assertTimeout(ofSeconds(2), () -> pingPong(100));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPong_300() {
     assertTimeout(ofSeconds(5), () -> pingPong(300));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPong_1_000() {
     assertTimeout(ofSeconds(5), () -> pingPong(1_000));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPong_10_000() {
     assertTimeout(ofSeconds(5), () -> pingPong(10_000));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPong_100_000() {
     assertTimeout(ofSeconds(5), () -> pingPong(100_000));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPong_1_000_000() {
     assertTimeout(ofSeconds(15), () -> pingPong(1_000_000));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPong_10_000_000() {
     assertTimeout(ofSeconds(50), () -> pingPong(10_000_000));
   }
 
-  @Tag("travis-ci")
   @Test
   public void testPingPongAlot() {
     pingPong(100_000_000);
