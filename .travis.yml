@@ -25,6 +25,9 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
+  - wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
+  - sh run.sh
 
 # script for build and release via Travis to Bintray
 script: # gradle/buildViaTravis.sh
@@ -34,9 +37,6 @@ script: # gradle/buildViaTravis.sh
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - sonar-scanner
-  - wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
-  - wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
-  - sh run.sh
 
 # cache between builds
 before_cache:
