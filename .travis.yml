@@ -34,6 +34,9 @@ script: # gradle/buildViaTravis.sh
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - sonar-scanner
+  - wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
+  - wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
+  - sh run.sh
 
 # cache between builds
 before_cache:

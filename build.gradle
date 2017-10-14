@@ -25,7 +25,8 @@ buildscript {
         maven { url ArtifactRepositoryContainer.MAVEN_CENTRAL_URL }
     }
     dependencies {
-        classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.1")
+        classpath "org.junit.platform:junit-platform-gradle-plugin:1.0.1"
+        classpath "com.uber:infer-plugin:0.7.4"
     }
 }
 
@@ -51,6 +52,7 @@ subprojects {
     apply from: "$rootDir/gradle/java.gradle"
     apply from: "$rootDir/gradle/test.gradle"
     apply from: "$rootDir/gradle/codestyle.gradle"
+    apply from: "$rootDir/gradle/infer.gradle"
 
     apply plugin: 'maven'
     apply plugin: 'maven-publish'
