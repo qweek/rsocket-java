@@ -125,8 +125,6 @@ public class TestingStreaming {
                       i -> rSocket.requestStream(new PayloadImpl("i -> " + i)).take(100),
                       1);
             });
-
-    return payloadFlux;
   }
 
   @Test

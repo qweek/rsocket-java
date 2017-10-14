@@ -16,18 +16,14 @@
 
 package io.rsocket;
 
+import static io.rsocket.util.ExceptionUtil.noStacktrace;
+
 import io.netty.buffer.Unpooled;
 import io.netty.util.collection.IntObjectHashMap;
 import io.rsocket.exceptions.ConnectionException;
 import io.rsocket.exceptions.Exceptions;
 import io.rsocket.internal.LimitableRequestPublisher;
 import io.rsocket.util.PayloadImpl;
-import org.reactivestreams.Publisher;
-import org.reactivestreams.Subscriber;
-import reactor.core.Disposable;
-import reactor.core.publisher.*;
-
-import javax.annotation.Nullable;
 import java.nio.channels.ClosedChannelException;
 import java.time.Duration;
 import java.util.Collection;
@@ -36,8 +32,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import static io.rsocket.util.ExceptionUtil.noStacktrace;
+import javax.annotation.Nullable;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import reactor.core.Disposable;
+import reactor.core.publisher.*;
 
 /** Client Side of a RSocket socket. Sends {@link Frame}s to a {@link RSocketServer} */
 class RSocketClient implements RSocket {
@@ -425,7 +424,7 @@ class RSocketClient implements RSocket {
     synchronized (RSocketClient.this) {
       subscribers = receivers.values();
       publishers = senders.values();
-  
+
       senders.clear();
       receivers.clear();
     }
