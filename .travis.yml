@@ -25,6 +25,7 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - chmod +x gradle/beforeScript.sh
   - gradle/beforeScript.sh
   # wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
   # wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
