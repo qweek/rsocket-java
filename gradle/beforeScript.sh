@@ -42,7 +42,7 @@ git clone https://github.com/facebook/infer.git infer-sources
 cd infer-sources
 # Compile Infer
 echo -e "\e[33mCompiling Infer\e[0m"
-./build-infer.sh java
+./build-infer.sh --no-opam-lock java
 # Install Infer into your PATH
 echo -e "\e[33mAdding Infer to PATH\e[0m"
 export PATH=`pwd`/infer/bin:$PATH
