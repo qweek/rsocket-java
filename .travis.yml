@@ -25,10 +25,7 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-  - git clone https://github.com/facebook/infer.git
-  - cd infer
-  - ./build-infer.sh java
-  - export PATH=`pwd`/infer/bin:$PATH
+  - gradle/beforeScript.sh
   # wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
   # wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
   # sh run.sh
