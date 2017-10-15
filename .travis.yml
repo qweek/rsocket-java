@@ -25,9 +25,13 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-  - wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
-  - wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
-  - sh run.sh
+  - git clone https://github.com/facebook/infer.git
+  - cd infer
+  - ./build-infer.sh java
+  - export PATH=`pwd`/infer/bin:$PATH
+  # wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
+  # wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
+  # sh run.sh
 
 # script for build and release via Travis to Bintray
 script: # gradle/buildViaTravis.sh
