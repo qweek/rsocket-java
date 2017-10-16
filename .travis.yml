@@ -40,6 +40,8 @@ script: # gradle/buildViaTravis.sh
   # infer -a eradicate --fail-on-issue --results-dir ./infer-out -- analyze ./
   - gradle clean
   - infer capture -- gradle build
+  - infer analyze --fail-on-issue -a infer
+  - infer analyze --fail-on-issue -a eradicate
   - inferTraceBugs
 
 # codeclimate
