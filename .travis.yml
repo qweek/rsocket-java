@@ -33,11 +33,14 @@ before_script:
 
 # script for build and release via Travis to Bintray
 script: # gradle/buildViaTravis.sh
-  - ./gradlew assemble
+  # ./gradlew assemble
   # ./gradlew infer
   # ./gradlew eradicate
-  - infer -a infer --fail-on-bug --out ./infer-out -- analyze ./
-  - infer -a eradicate --fail-on-bug --out ./infer-out -- analyze ./
+  # infer -a infer --fail-on-issue --results-dir ./infer-out -- analyze ./
+  # infer -a eradicate --fail-on-issue --results-dir ./infer-out -- analyze ./
+  - gradle clean
+  - infer capture -- gradle build
+  - inferTraceBugs
 
 # codeclimate
 after_script:
