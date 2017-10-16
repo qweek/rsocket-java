@@ -54,8 +54,8 @@ cd infer-linux64-v0.12.1/
 #echo -e "\e[33mCompiling Opam\e[0m"
 #./build-infer.sh --only-install-opam
 echo -e "\e[33mCompiling Infer\e[0m"
-./build-infer.sh java
+sudo ./build-infer.sh java
 echo -e "\e[33mInstalling Infer\e[0m"
-make install
+sudo make install
 echo -e "\e[33mAdding Infer to PATH\e[0m"
 export PATH=`pwd`/infer/bin:$PATH
