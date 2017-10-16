@@ -59,4 +59,4 @@ echo -e "\e[33mInstalling Infer\e[0m"
 sudo make install
 echo -e "\e[33mAdding Infer to PATH\e[0m"
 export PATH=`pwd`/infer/bin:$PATH
-infer -v
+#infer -v
