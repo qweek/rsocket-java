@@ -34,7 +34,7 @@ sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
 # yes '' | sudo add-apt-repository ppa:avsm/ppa
 # sudo apt-get update
 # sudo apt-get install -y ocaml ocaml-native-compilers camlp4-extra opam
-# wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
+wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
 
 # Checkout Infer
 #echo -e "\e[33mCloning Infer from Github\e[0m"
@@ -51,8 +51,8 @@ echo -e "\e[33mCloning Infer from Github\e[0m"
 wget https://github.com/facebook/infer/releases/download/v0.12.1/infer-linux64-v0.12.1.tar.xz
 tar xf infer-linux64-v0.12.1.tar.xz
 cd infer-linux64-v0.12.1/
-echo -e "\e[33mCompiling Opam\e[0m"
-./build-infer.sh --only-install-opam
+#echo -e "\e[33mCompiling Opam\e[0m"
+#./build-infer.sh --only-install-opam
 echo -e "\e[33mCompiling Infer\e[0m"
 ./build-infer.sh java
 echo -e "\e[33mInstalling Infer\e[0m"
