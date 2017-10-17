@@ -15,23 +15,41 @@ echo -e "\e[33mInstalling Infer dependencies\e[0m"
 sudo apt-get update
 sudo apt-get -o Dpkg::Options::="--force-confnew" upgrade -y
 sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
-  autoconf \                    # 2.69-6
-  automake \                    # 1:1.14.1-2ubuntu1
-  build-essential \             # 11.6ubuntu6
-  libffi-dev \                  # ^ 3.1~rc1+r3.0.13-12ubuntu0.2
-  libgmp-dev \                  # 2:5.1.3+dfsg-1ubuntu1
-  libmpc-dev \                  # + 1.0.1-1ubuntu1
-  libmpfr-dev \                 # + 3.1.2-1
-  m4 \                          # 1.4.17-2ubuntu1
-  pkg-config \                  # 0.26-1ubuntu4
-  python-software-properties \  # + 0.92.37.8
-  unzip \                       # 6.0-9ubuntu1.5
-  zlib1g-dev \                  # 1:1.2.8.dfsg-1ubuntu1
+  autoconf \
+  automake \
+  build-essential \
+  libffi-dev \
+  libgmp-dev \
+  libmpc-dev \
+  libmpfr-dev \
+  m4 \
+  pkg-config \
+  python-software-properties \
+  unzip \
+  zlib1g-dev \
   software-properties-common \
   ocaml \
   ocaml-native-compilers \
   camlp4-extra \
   opam
+
+#  autoconf \                    # 2.69-6
+#  automake \                    # 1:1.14.1-2ubuntu1
+#  build-essential \             # 11.6ubuntu6
+#  libffi-dev \                  # ^ 3.1~rc1+r3.0.13-12ubuntu0.2
+#  libgmp-dev \                  # 2:5.1.3+dfsg-1ubuntu1
+#  libmpc-dev \                  # + 1.0.1-1ubuntu1
+#  libmpfr-dev \                 # + 3.1.2-1
+#  m4 \                          # 1.4.17-2ubuntu1
+#  pkg-config \                  # 0.26-1ubuntu4
+#  python-software-properties \  # + 0.92.37.8
+#  unzip \                       # 6.0-9ubuntu1.5
+#  zlib1g-dev \                  # 1:1.2.8.dfsg-1ubuntu1
+#  software-properties-common \
+#  ocaml \
+#  ocaml-native-compilers \
+#  camlp4-extra \
+#  opam
 
 # Opam is broken on some Ubuntu versions
 # Install Opam from official repository (http://opam.ocaml.org/doc/Install.html#Binarydistribution)
