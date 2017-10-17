@@ -33,6 +33,8 @@ sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
   camlp4-extra \
   opam
 
+opam init
+
 #  autoconf \                    # 2.69-6
 #  automake \                    # 1:1.14.1-2ubuntu1
 #  build-essential \             # 11.6ubuntu6
@@ -45,11 +47,11 @@ sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
 #  python-software-properties \  # + 0.92.37.8
 #  unzip \                       # 6.0-9ubuntu1.5
 #  zlib1g-dev \                  # 1:1.2.8.dfsg-1ubuntu1
-#  software-properties-common \
-#  ocaml \
-#  ocaml-native-compilers \
-#  camlp4-extra \
-#  opam
+#  software-properties-common \  # 0.92.37.8
+#  ocaml \                       # + 4.01.0-3ubuntu3.1
+#  ocaml-native-compilers \      # + 4.01.0-3ubuntu3.1
+#  camlp4-extra \                # + 4.01.0-3ubuntu3.1
+#  opam                          # + 1.1.1-1
 
 # Opam is broken on some Ubuntu versions
 # Install Opam from official repository (http://opam.ocaml.org/doc/Install.html#Binarydistribution)
