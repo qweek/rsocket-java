@@ -26,16 +26,16 @@ sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
   pkg-config \
   python-software-properties \
   unzip \
-  zlib1g-dev \
-  software-properties-common \
-  ocaml \
-  ocaml-native-compilers \
-  camlp4-extra \
-  opam
-echo -e "Update Opam"
-opam update
-echo -e "Init Opam"
-opam init
+  zlib1g-dev
+#  software-properties-common \
+#  ocaml \
+#  ocaml-native-compilers \
+#  camlp4-extra \
+#  opam
+#echo -e "Update Opam"
+#opam update
+#echo -e "Init Opam"
+#opam init
 
 #  autoconf \                    # 2.69-6
 #  automake \                    # 1:1.14.1-2ubuntu1
@@ -57,12 +57,14 @@ opam init
 
 # Opam is broken on some Ubuntu versions
 # Install Opam from official repository (http://opam.ocaml.org/doc/Install.html#Binarydistribution)
-#echo -e "\e[33mInstalling Opam\e[0m"
+echo -e "\e[33mInstalling Opam\e[0m"
 # yes '' | sudo add-apt-repository ppa:avsm/ppa
 # sudo apt-get update
 # sudo apt-get install -y ocaml ocaml-native-compilers camlp4-extra opam
 # 301 wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
 # wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
+wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh
+sh ./opam_installer.sh /usr/local/bin 4.04.0
 
 # Checkout Infer
 #echo -e "\e[33mCloning Infer from Github\e[0m"
