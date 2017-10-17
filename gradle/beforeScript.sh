@@ -26,7 +26,12 @@ sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
   pkg-config \                  # 0.26-1ubuntu4
   python-software-properties \  # + 0.92.37.8
   unzip \                       # 6.0-9ubuntu1.5
-  zlib1g-dev                    # 1:1.2.8.dfsg-1ubuntu1
+  zlib1g-dev \                  # 1:1.2.8.dfsg-1ubuntu1
+  software-properties-common \
+  ocaml \
+  ocaml-native-compilers \
+  camlp4-extra \
+  opam
 
 # Opam is broken on some Ubuntu versions
 # Install Opam from official repository (http://opam.ocaml.org/doc/Install.html#Binarydistribution)

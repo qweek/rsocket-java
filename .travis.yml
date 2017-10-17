@@ -42,7 +42,7 @@ script: # gradle/buildViaTravis.sh
   - travis_wait 30 infer capture -- gradle build
   - travis_wait 30 infer analyze --fail-on-issue -a infer
   - travis_wait 30 infer analyze --fail-on-issue -a eradicate
-  - inferTraceBugs
+  # inferTraceBugs
 
 # codeclimate
 after_script:
