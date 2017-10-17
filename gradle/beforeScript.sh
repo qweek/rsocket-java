@@ -32,7 +32,9 @@ sudo apt-get -o Dpkg::Options::="--force-confnew" install -y  \
   ocaml-native-compilers \
   camlp4-extra \
   opam
-
+echo -e "Update Opam"
+opam update
+echo -e "Init Opam"
 opam init
 
 #  autoconf \                    # 2.69-6
