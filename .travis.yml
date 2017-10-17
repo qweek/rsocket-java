@@ -39,9 +39,9 @@ script: # gradle/buildViaTravis.sh
   # infer -a infer --fail-on-issue --results-dir ./infer-out -- analyze ./
   # infer -a eradicate --fail-on-issue --results-dir ./infer-out -- analyze ./
   - gradle clean
-  - travis_wait 30 infer capture -- gradle build
-  - travis_wait 30 infer analyze --fail-on-issue -a infer
-  - travis_wait 30 infer analyze --fail-on-issue -a eradicate
+  - infer capture -- gradle build
+  - infer analyze --fail-on-issue -a infer
+  - infer analyze --fail-on-issue -a eradicate
   # inferTraceBugs
 
 # codeclimate
