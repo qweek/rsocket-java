@@ -40,13 +40,25 @@ script: # gradle/buildViaTravis.sh
   # infer -a eradicate --fail-on-issue --results-dir ./infer-out -- analyze ./
   - gradle clean
   - infer capture -- gradle build
-  - infer analyze --fail-on-issue -a infer
-  - infer analyze --fail-on-issue -a eradicate
+  # infer analyze --fail-on-issue -a infer
+  # infer analyze --fail-on-issue -a eradicate
+  - infer analyze -a infer
+  - infer analyze -a eradicate
+  - infer analyze -a checkers
+  - infer analyze -a tracing
+  - infer analyze --bufferoverrun
+  - infer analyze --compute-analytics
+  - infer analyze --crashcontext
+  - infer analyze --immutable-cast
+  - infer analyze --quandary
+  - infer analyze --threadsafety
+  - infer analyze --tracing
+  - infer --version
   - cat infer-out/bugs.txt
   - cat infer-out/report.json
   - cat infer-out/toplevel.log
-  - infer analyze --fail-on-issue -a checkers
-  - infer --help
+  # infer analyze --fail-on-issue -a checkers
+  # infer --help
   # inferTraceBugs
 
 # codeclimate
