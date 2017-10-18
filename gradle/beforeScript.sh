@@ -63,8 +63,9 @@ echo -e "\e[33mInstalling Opam\e[0m"
 # sudo apt-get install -y ocaml ocaml-native-compilers camlp4-extra opam
 # 301 wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
 # wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
-wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh
-sh ./opam_installer.sh /usr/local/bin 4.04.0
+wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin  4.04.0
+# latest version 4.05.0
+# sh ./opam_installer.sh /usr/local/bin 4.04.0
 
 # Checkout Infer
 #echo -e "\e[33mCloning Infer from Github\e[0m"
@@ -78,7 +79,7 @@ sh ./opam_installer.sh /usr/local/bin 4.04.0
 #export PATH=`pwd`/infer/bin:$PATH
 
 echo -e "\e[33mCloning Infer from Github\e[0m"
-wget https://github.com/facebook/infer/releases/download/v0.12.1/infer-linux64-v0.12.1.tar.xz
+wget  -q --show-progress https://github.com/facebook/infer/releases/download/v0.12.1/infer-linux64-v0.12.1.tar.xz
 tar xf infer-linux64-v0.12.1.tar.xz
 cd infer-linux64-v0.12.1/
 #echo -e "\e[33mCompiling Opam\e[0m"

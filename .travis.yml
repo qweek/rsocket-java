@@ -42,6 +42,10 @@ script: # gradle/buildViaTravis.sh
   - infer capture -- gradle build
   - infer analyze --fail-on-issue -a infer
   - infer analyze --fail-on-issue -a eradicate
+  - cat infer-out/bugs.txt
+  - cat infer-out/report.json
+  - infer analyze --fail-on-issue -a checkers
+  - infer --help
   # inferTraceBugs
 
 # codeclimate
