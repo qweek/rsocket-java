@@ -45,14 +45,8 @@ script: # gradle/buildViaTravis.sh
   - infer analyze -a infer
   - infer analyze -a eradicate
   - infer analyze -a checkers
-  - infer analyze -a tracing
-  - infer analyze --bufferoverrun
-  - infer analyze --compute-analytics
-  - infer analyze --crashcontext
-  - infer analyze --immutable-cast
-  - infer analyze --quandary
-  - infer analyze --threadsafety
-  - infer analyze --tracing
+  # infer analyze -a tracing
+  - infer analyze --bufferoverrun --compute-analytics --crashcontext --immutable-cast --quandary --threadsafety --tracing
   - infer --version
   - cat infer-out/bugs.txt
   - cat infer-out/report.json
