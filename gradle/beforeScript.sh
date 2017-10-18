@@ -79,7 +79,7 @@ wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh
 #export PATH=`pwd`/infer/bin:$PATH
 
 echo -e "\e[33mCloning Infer from Github\e[0m"
-wget -q -O https://github.com/facebook/infer/releases/download/v0.12.1/infer-linux64-v0.12.1.tar.xz
+wget -q https://github.com/facebook/infer/releases/download/v0.12.1/infer-linux64-v0.12.1.tar.xz
 tar xf infer-linux64-v0.12.1.tar.xz
 cd infer-linux64-v0.12.1/
 #echo -e "\e[33mCompiling Opam\e[0m"
