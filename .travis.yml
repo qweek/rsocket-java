@@ -44,6 +44,7 @@ script: # gradle/buildViaTravis.sh
   - infer analyze --fail-on-issue -a eradicate
   - cat infer-out/bugs.txt
   - cat infer-out/report.json
+  - cat infer-out/toplevel.log
   - infer analyze --fail-on-issue -a checkers
   - infer --help
   # inferTraceBugs
