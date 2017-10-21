@@ -53,17 +53,17 @@ script: # gradle/buildViaTravis.sh
   # cat infer-out/report.json
   # cat infer-out/report.csv
   # cat infer-out/toplevel.log
-  - infer analyze --help
-  - infer capture --help
-  - infer explore --help
-  - gradle clean
-  - infer run -- gradle build
-  - cat infer-out/bugs.txt
+  - infer analyze --help-full
+  - infer capture --help-full
+  - infer explore --help-full
+  # gradle clean
+  # infer run -- gradle build
+  # cat infer-out/bugs.txt
   # cat infer-out/report.json
   # cat infer-out/report.csv
   # cat infer-out/toplevel.log
   # infer analyze --fail-on-issue -a checkers
-  # infer --help
+  - infer --help-full
   # inferTraceBugs
 
 # codeclimate
