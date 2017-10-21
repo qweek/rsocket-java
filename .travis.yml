@@ -42,12 +42,13 @@ script: # gradle/buildViaTravis.sh
   - infer capture -- gradle build
   # infer analyze --fail-on-issue -a infer
   # infer analyze --fail-on-issue -a eradicate
-  - infer analyze -a infer
+  # infer analyze -a infer
   # infer analyze -a eradicate
   # - infer --eradicate
-  - infer analyze -a checkers
+  - infer analyze -a checkers --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit
+  - infer analyze -a checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit
   # infer analyze -a tracing
-  - infer --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit
+  # infer --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit
   # --immutable-cast --quandary --racerd
   # --default-checkers
   # --annotation-reachability --biabduction --fragment-retains-view --immutable-cast --liveness --printf-args --quandary --racerd --siof
