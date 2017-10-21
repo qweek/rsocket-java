@@ -50,18 +50,18 @@ script: # gradle/buildViaTravis.sh
   - infer --bufferoverrun --compute-analytics --crashcontext --immutable-cast --quandary --racerd --threadsafety --tracing
   - infer --version
   - cat infer-out/bugs.txt
-  - cat infer-out/report.json
-  - cat infer-out/report.csv
-  - cat infer-out/toplevel.log
+  # cat infer-out/report.json
+  # cat infer-out/report.csv
+  # cat infer-out/toplevel.log
   - infer analyze --help
   - infer capture --help
   - infer explore --help
   - gradle clean
   - infer run -- gradle build
   - cat infer-out/bugs.txt
-  - cat infer-out/report.json
-  - cat infer-out/report.csv
-  - cat infer-out/toplevel.log
+  # cat infer-out/report.json
+  # cat infer-out/report.csv
+  # cat infer-out/toplevel.log
   # infer analyze --fail-on-issue -a checkers
   # infer --help
   # inferTraceBugs
