@@ -63,7 +63,7 @@ echo -e "\e[33mInstalling Opam\e[0m"
 # sudo apt-get install -y ocaml ocaml-native-compilers camlp4-extra opam
 # 301 wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
 # wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
-wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sudo sh -s /usr/local/bin  4.05.0
+wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sudo sh -s /usr/local/bin  4.05.0+flambda
 # latest version 4.05.0
 # sh ./opam_installer.sh /usr/local/bin 4.04.0
 
