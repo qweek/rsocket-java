@@ -68,7 +68,7 @@ script: # gradle/buildViaTravis.sh
   # cat infer-out/report.csv
   # cat infer-out/toplevel.log
   # infer analyze --fail-on-issue -a checkers
-  - infer explore
+  - infer explore --source-preview
   - infer explore --html
   # infer --help-full
   # inferTraceBugs
