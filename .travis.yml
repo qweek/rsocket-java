@@ -33,10 +33,6 @@ before_script:
 
 # script for build and release via Travis to Bintray
 script: # gradle/buildViaTravis.sh
-  - gradle clean
-  - infer capture -- gradle test
-  - infer analyze -a checkers --print-active-checkers --quiet && cat infer-out/bugs.txt
-  - infer --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --print-active-checkers --quiet && cat infer-out/bugs.txt
   # ./gradlew assemble
   # ./gradlew infer
   # ./gradlew eradicate
@@ -85,7 +81,11 @@ script: # gradle/buildViaTravis.sh
   # - cat infer-out/bugs.txt
   # - infer analyze -a infer --print-active-checkers --quiet
   # - infer --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit --print-active-checkers --quiet
-  - infer explore --help-full
+  ##- infer explore --help-full
+  - gradle clean
+  - infer capture -- gradle test
+  - infer analyze -a checkers --print-active-checkers --quiet && cat infer-out/bugs.txt
+  - infer --no-default-checkers --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --print-active-checkers --quiet && cat infer-out/bugs.txt
   # - infer explore --source-preview
 
 # codeclimate
