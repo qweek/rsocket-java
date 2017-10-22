@@ -20,13 +20,17 @@ dist: trusty
 sudo: required
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 
+install:
+  - chmod +x gradle/beforeScript.sh
+  - gradle/beforeScript.sh
+
 # codeclimate
-before_script:
+# before_script:
   # - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   # - chmod +x ./cc-test-reporter
   # - ./cc-test-reporter before-build
-  - chmod +x gradle/beforeScript.sh
-  - gradle/beforeScript.sh
+  #- chmod +x gradle/beforeScript.sh
+  #- gradle/beforeScript.sh
   # wget -O Dockerfile https://raw.githubusercontent.com/facebook/infer/master/docker/Dockerfile
   # wget -O run.sh https://raw.githubusercontent.com/facebook/infer/master/docker/run.sh
   # sh run.sh
