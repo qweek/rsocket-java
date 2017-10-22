@@ -38,15 +38,15 @@ script: # gradle/buildViaTravis.sh
   # ./gradlew eradicate
   # infer -a infer --fail-on-issue --results-dir ./infer-out -- analyze ./
   # infer -a eradicate --fail-on-issue --results-dir ./infer-out -- analyze ./
-  - gradle clean
-  - infer capture -- gradle build
+  ### - gradle clean
+  ### - infer capture -- gradle build
   # infer analyze --fail-on-issue -a infer
   # infer analyze --fail-on-issue -a eradicate
-  - infer analyze -a infer --print-active-checkers --quiet
-  - cat infer-out/bugs.txt
-  - infer --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit --print-active-checkers --quiet
-  - cat infer-out/bugs.txt
-  - infer analyze -a checkers --print-active-checkers --quiet
+  ### - infer analyze -a infer --print-active-checkers --quiet
+  ### - cat infer-out/bugs.txt
+  ### - infer --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit --print-active-checkers --quiet
+  ### - cat infer-out/bugs.txt
+  ### - infer analyze -a checkers --print-active-checkers --quiet
   # infer analyze -a eradicate
   # - infer --eradicate
   ## analyze -a checkers --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit
@@ -59,7 +59,7 @@ script: # gradle/buildViaTravis.sh
   # --crashcontext
   # --threadsafety
   # infer --version
-  - cat infer-out/bugs.txt
+  ### - cat infer-out/bugs.txt
   # cat infer-out/report.json
   # cat infer-out/report.csv
   # cat infer-out/toplevel.log
@@ -74,10 +74,19 @@ script: # gradle/buildViaTravis.sh
   # cat infer-out/toplevel.log
   # infer analyze --fail-on-issue -a checkers
   ## infer explore --source-preview
-  - infer explore --html
+  # infer explore --html
   # infer --help-full
   # inferTraceBugs
-  - ls infer-out
+  # ls infer-out
+  - gradle clean
+  - infer capture -- gradle test
+  - infer analyze -a checkers --print-active-checkers --quiet && cat infer-out/bugs.txt
+  - infer --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --print-active-checkers --quiet && cat infer-out/bugs.txt
+  # - cat infer-out/bugs.txt
+  # - infer analyze -a infer --print-active-checkers --quiet
+  # - infer --default-checkers --check-nullable --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --uninit --print-active-checkers --quiet
+  - infer explore --help-full
+  # - infer explore --source-preview
 
 # codeclimate
 after_script:
