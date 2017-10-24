@@ -4,10 +4,10 @@ OPAM_VER=4.05.0
 INFER_VER=0.13.0
 
 # https://github.com/facebook/infer/blob/master/INSTALL.md#pre-compiled-versions
-echo "Installing Infer dependencies"
-sudo apt-get update
-sudo apt-get -o Dpkg::Options::="--force-confnew" upgrade -y
-sudo apt-get -o Dpkg::Options::="--force-confnew" install -y libffi-dev libmpc-dev libmpfr-dev python-software-properties
+# echo "Installing Infer dependencies"
+# sudo apt-get update
+# sudo apt-get -o Dpkg::Options::="--force-confnew" upgrade -y
+# sudo apt-get -o Dpkg::Options::="--force-confnew" install -y libffi-dev libmpc-dev libmpfr-dev python-software-properties
 # installed on travis: autoconf automake build-essential libgmp-dev m4 pkg-config unzip zlib1g-dev
 
 # http://opam.ocaml.org/doc/Install.html#Binarydistribution
