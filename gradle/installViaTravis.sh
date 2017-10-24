@@ -11,8 +11,8 @@ INFER_VER=0.13.0
 # installed on travis: autoconf automake build-essential libgmp-dev m4 pkg-config unzip zlib1g-dev
 
 # http://opam.ocaml.org/doc/Install.html#Binarydistribution
-echo "Installing Opam"
-wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin ${OPAM_VER}
+# echo "Installing Opam"
+# wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin ${OPAM_VER}
 
 echo "Downloading Infer"
 wget -q https://github.com/facebook/infer/releases/download/v${INFER_VER}/infer-linux64-v${INFER_VER}.tar.xz

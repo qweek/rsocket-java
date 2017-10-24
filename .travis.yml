@@ -7,6 +7,7 @@ addons:
   apt:
     packages:
       - oracle-java8-installer
+      # Infer dependencies
       - libffi-dev
       - libmpc-dev
       - libmpfr-dev
@@ -18,6 +19,8 @@ sudo: true
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 
 install:
+  - wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh
+  - ./opam_installer.sh /usr/local/bin 4.05.0
   - chmod +x gradle/installViaTravis.sh
   - gradle/installViaTravis.sh
 
@@ -36,6 +39,9 @@ cache:
   directories:
   - $HOME/.m2
   - $HOME/.gradle
+  # OPAM cache
+  - $HOME/.opam
+  - /usr/local/bin/opam
 
 env:
   global:
