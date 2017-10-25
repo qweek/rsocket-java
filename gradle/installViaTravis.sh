@@ -12,7 +12,7 @@ INFER_VER=0.13.0
 
 # http://opam.ocaml.org/doc/Install.html#Binarydistribution
 # echo "Installing Opam"
-# wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin ${OPAM_VER}
+# wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin ${OPAM_VER}
 
 ##echo "Downloading Infer"
 ##wget -q https://github.com/facebook/infer/releases/download/v${INFER_VER}/infer-linux64-v${INFER_VER}.tar.xz
@@ -30,13 +30,14 @@ INFER_VER=0.13.0
 
 
 # Install Opam
-wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin 4.05.0
+wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin 4.05.0
 # Download Infer
 wget https://github.com/facebook/infer/releases/download/v0.13.0/infer-linux64-v0.13.0.tar.xz -q -O - | tar -xJf -
 mv -u infer-linux64-v0.13.0 $HOME/.infer && cd $HOME/.infer
 # Compile Infer
 ./build-infer.sh java
 # Install Infer
+./configure --prefix=$HOME
 make install
 # Add Infer to PATH
 export PATH=`pwd`/infer/bin:$PATH
