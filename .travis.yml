@@ -19,9 +19,19 @@ sudo: true
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 
 install:
+  # Install Opam
   - wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin 4.05.0
-  - chmod +x gradle/installViaTravis.sh
-  - gradle/installViaTravis.sh
+  # Download Infer
+  - wget -q https://github.com/facebook/infer/releases/download/v${INFER_VER}/infer-linux64-v${INFER_VER}.tar.xz -O - | tar -xf -C $HOME/.infer --strip-components=1
+  - cd $HOME/.infer
+  # Compile Infer
+  - ./build-infer.sh java
+  # Install Infer
+  - sudo make install
+  # Add Infer to PATH
+  - export PATH=`pwd`/infer/bin:$PATH
+  # - chmod +x gradle/installViaTravis.sh
+  # - gradle/installViaTravis.sh
 
 # script for build and release via Travis to Bintray
 script: gradle/buildViaTravis.sh
@@ -38,9 +48,11 @@ cache:
   directories:
   - $HOME/.m2
   - $HOME/.gradle
-  # OPAM cache
+  # Opam cache
   - $HOME/.opam
   - /usr/local/bin/opam
+  # Infer cache
+  - $HOME/.infer
 
 env:
   global:
