@@ -22,7 +22,7 @@ install:
   # Install Opam
   #- wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin 4.05.0
   # Download Infer
-  - wget https://github.com/facebook/infer/releases/download/v0.13.0/infer-linux64-v0.13.0.tar.xz -q -O - | tar xf -
+  - wget https://github.com/facebook/infer/releases/download/v0.13.0/infer-linux64-v0.13.0.tar.xz -q -O - | tar -xJf -
   - mv -u infer-linux64-v0.13.0 $HOME/.infer && cd $HOME/.infer
   # Compile Infer
   - ./build-infer.sh java
