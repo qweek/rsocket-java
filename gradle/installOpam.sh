@@ -16,10 +16,10 @@ wget -q "https://github.com/ocaml/opam/releases/download/$OPAM/$FILE"
 echo "Create Bin directory $BINDIR"
 mkdir -p "$BINDIR"
 
-echo "Install Opam $OPAM to $BINDIR/opam"
+echo "Install Opam $OPAM"
 install -m 755 $FILE $BINDIR/opam
 
 # $BINDIR/opam init --comp "$OCAML"
 
-echo "Add Opam to PATH"
+echo "Add $BINDIR/opam to PATH"
 export PATH=$BINDIR/opam:$PATH
