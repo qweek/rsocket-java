@@ -20,10 +20,10 @@ echo "Install Opam $OPAM"
 install -m 755 $FILE $BINDIR
 
 # $BINDIR/opam init --comp "$OCAML"
+# $BINDIR/opam config env
 
 echo "Add $BINDIR/opam to PATH"
-# export PATH=$BINDIR:$PATH
-$BINDIR/opam config env
+export PATH=$BINDIR/opam:$PATH
 
 echo "Add $BINDIR/opam to PATH"
 which opam
