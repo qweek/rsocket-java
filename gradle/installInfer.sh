@@ -10,8 +10,6 @@ LIBDIR=$HOME/usr/local/lib
 echo "Download Infer file $FILE"
 wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.xz"  -O - | tar -xJf - && cd $FILE
 
-ls
-
 echo "Compile Infer $INFER"
 ./build-infer.sh java
 
