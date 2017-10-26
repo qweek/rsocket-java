@@ -22,7 +22,8 @@ install -m 755 $FILE $BINDIR/opam
 # $BINDIR/opam init --comp "$OCAML"
 
 echo "Add $BINDIR/opam to PATH"
-export PATH=$BINDIR/opam/opam:$PATH
+# export PATH=$BINDIR:$PATH
+$BINDIR/opam config env
 
 echo "Add $BINDIR/opam to PATH"
 which opam
