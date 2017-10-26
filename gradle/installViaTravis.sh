@@ -46,7 +46,8 @@ echo "Install Opam $opam"
 install -m 755 $file $dir/opam
 
 echo "Init Ocaml $ocaml"
-$dir/opam  init --comp "$ocaml"
+# $dir/opam  init --comp "$ocaml"
+which opam
 
 # Install Opam
 # wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin 4.05.0
