@@ -28,9 +28,41 @@ INFER_VER=0.13.0
 ##echo "Adding Infer to PATH"
 ##export PATH=`pwd`/infer/bin:$PATH
 
+echo "Check OS m"
+uname -m
+echo "Check OS s"
+uname -s
+
+echo "Init vars"
+arch=$(uname -m)
+sys=$(uname -s)
+opam=1.2.2
+ocaml=4.05.0
+file=opam-$opam-$arch-$sys
+dir=/usr/local/bin/opam
+
+echo "Echo vars"
+echo $arch
+echo $sys
+echo $opam
+echo $ocaml
+echo $file
+echo $dir
+
+echo "Download"
+wget -q -O "$TMP/$file" "https://github.com/ocaml/opam/releases/download/$opam/$file"
+
+echo "Dir"
+mkdir -p "$dir" # 2>/dev/null
+echo "Install"
+install -m 755 $TMP/$file $dir/opam
+echo "Remove"
+rm -f $TMP/$file
+echo "Init"
+$BINDIR/opam  init --comp "$ocaml"
 
 # Install Opam
-wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin 4.05.0
+# wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin 4.05.0
 # Download Infer
 wget https://github.com/facebook/infer/releases/download/v0.13.0/infer-linux64-v0.13.0.tar.xz -q -O - | tar -xJf -
 mv -u infer-linux64-v0.13.0 $HOME/.infer && cd $HOME/.infer
