@@ -17,7 +17,7 @@ echo "Create Bin directory $BINDIR"
 mkdir -p "$BINDIR"
 
 echo "Install Opam $OPAM"
-install -m 755 $FILE $BINDIR/opam
+install -m 755 $FILE $BINDIR
 
 # $BINDIR/opam init --comp "$OCAML"
 
