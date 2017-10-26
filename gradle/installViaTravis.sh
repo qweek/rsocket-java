@@ -31,33 +31,57 @@ INFER_VER=0.13.0
 echo "Init vars"
 arch=$(uname -m) # x86_64
 sys=$(uname -s) # Linux
+platform=linux64
 opam=1.2.2
 ocaml=4.05.0
-file=opam-$opam-$arch-$sys
-dir=$HOME/usr/local/bin/opam
+infer=0.13.0
+opamfile=opam-$opam-$arch-$sys
+opamdir=$HOME/usr/local/bin/opam
+inferfile=infer-$platform-v$infer
+inferdir=$HOME/usr/local/lib/infer
 
-echo "Create directory $dir"
-mkdir -p "$dir"
+uname -a
 
-echo "Download file $file"
-wget -q "https://github.com/ocaml/opam/releases/download/$opam/$file"
+echo "Create Opam directory $opamdir"
+mkdir -p "$opamdir"
 
-echo "Install Opam $opam"
-install -m 755 $file $dir/opam
+echo "Download Opam file $opamfile"
+wget -q "https://github.com/ocaml/opam/releases/download/$opam/$opamfile"
+
+echo "Install Opam version $opam"
+install -m 755 $opamfile $opamdir/opam
 
 echo "Init Ocaml $ocaml"
 # $dir/opam  init --comp "$ocaml"
 which opam
 
+
+echo "Create Infer directory $inferdir"
+mkdir -p "$inferdir"
+
+echo "Download Infer file $inferfile"
+wget -q "https://github.com/facebook/infer/releases/download/v$infer/$inferfile.tar.xz"  -O - | tar -xJf -
+
+echo "Compile Infer version $infer"
+cd $inferfile
+./build-infer.sh java
+
+echo "Install Infer prefix $HOME"
+./configure --prefix=$HOME
+make install
+
+echo "Add Infer to PATH"
+export PATH=`pwd`/infer/bin:$PATH
+
 # Install Opam
 # wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin 4.05.0
 # Download Infer
-wget https://github.com/facebook/infer/releases/download/v0.13.0/infer-linux64-v0.13.0.tar.xz -q -O - | tar -xJf -
-mv -u infer-linux64-v0.13.0 $HOME/.infer && cd $HOME/.infer
+# wget https://github.com/facebook/infer/releases/download/v0.13.0/infer-linux64-v0.13.0.tar.xz -q -O - | tar -xJf -
+# mv -u infer-linux64-v0.13.0 $HOME/.infer && cd $HOME/.infer
 # Compile Infer
-./build-infer.sh java
+#./build-infer.sh java
 # Install Infer
-./configure --prefix=$HOME
-make install
+#./configure --prefix=$HOME
+#make install
 # Add Infer to PATH
-export PATH=`pwd`/infer/bin:$PATH
+#export PATH=`pwd`/infer/bin:$PATH
