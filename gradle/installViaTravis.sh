@@ -28,18 +28,13 @@ INFER_VER=0.13.0
 ##echo "Adding Infer to PATH"
 ##export PATH=`pwd`/infer/bin:$PATH
 
-echo "Check OS m"
-uname -m
-echo "Check OS s"
-uname -s
-
 echo "Init vars"
 arch=$(uname -m)
 sys=$(uname -s)
 opam=1.2.2
 ocaml=4.05.0
 file=opam-$opam-$arch-$sys
-dir=/usr/local/bin/opam
+dir=$HOME/usr/local/bin/opam
 
 echo "Echo vars"
 echo $arch
@@ -50,14 +45,14 @@ echo $file
 echo $dir
 
 echo "Download"
-wget -q -O "$TMP/$file" "https://github.com/ocaml/opam/releases/download/$opam/$file"
+wget -q -O "$TMPDIR/$file" "https://github.com/ocaml/opam/releases/download/$opam/$file"
 
 echo "Dir"
 mkdir -p "$dir" # 2>/dev/null
 echo "Install"
-install -m 755 $TMP/$file $dir/opam
+install -m 755 $TMPDIR/$file $dir/opam
 echo "Remove"
-rm -f $TMP/$file
+rm -f $TMPDIR/$file
 echo "Init"
 $BINDIR/opam  init --comp "$ocaml"
 
