@@ -36,28 +36,23 @@ opam=1.2.2
 ocaml=4.05.0
 infer=0.13.0
 opamfile=opam-$opam-$arch-$sys
-opamdir=$HOME/usr/local/bin/opam
 inferfile=infer-$platform-v$infer
-inferdir=$HOME/usr/local/lib/infer
+bindir=$HOME/usr/local/bin
+libdir=$HOME/usr/local/lib/infer
 
 echo "Download Opam file $opamfile"
 wget -q "https://github.com/ocaml/opam/releases/download/$opam/$opamfile"
 
-echo "Create Opam directory $opamdir"
-mkdir -p "$opamdir"
+echo "Create Bin directory $bindir"
+mkdir -p "$bindir"
 
-echo "Install Opam version $opam"
-install -m 755 $opamfile $opamdir
+echo "Install Opam $opam to $bindir/opam"
+install -m 755 $opamfile $bindir/opam
 
-echo "Init Ocaml $ocaml"
-# $dir/opam  init --comp "$ocaml"
-ls $opamdir
-echo "Init Ocaml 2 $ocaml"
-ls $opamdir/opam
-echo "Init Ocaml 3 $ocaml"
-ls $opamdir/opam-1.2.2-x86_64-Linux
-echo "Init Ocaml 4 $ocaml"
-export PATH=$opamdir:$PATH
+# $bindir/opam init --comp "$ocaml"
+
+echo "Add Opam to PATH"
+export PATH=$bindir:$PATH
 
 
 echo "Create Infer directory $inferdir"
