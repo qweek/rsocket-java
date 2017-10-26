@@ -36,25 +36,17 @@ ocaml=4.05.0
 file=opam-$opam-$arch-$sys
 dir=$HOME/usr/local/bin/opam
 
-echo "Echo vars"
-echo $arch
-echo $sys
-echo $opam
-echo $ocaml
-echo $file
-echo $dir
+echo "Create directory $dir"
+mkdir -p "$dir"
 
-echo "Download"
+echo "Download file $file"
 wget -q "https://github.com/ocaml/opam/releases/download/$opam/$file"
 
-echo "Dir"
-mkdir -p "$dir" # 2>/dev/null
-echo "Install"
+echo "Install Opam $opam"
 install -m 755 $file $dir/opam
-echo "Remove"
-rm -f $file
-echo "Init"
-$BINDIR/opam  init --comp "$ocaml"
+
+echo "Init Ocaml $ocaml"
+$dir/opam  init --comp "$ocaml"
 
 # Install Opam
 # wget https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s $HOME/usr/local/bin 4.05.0
