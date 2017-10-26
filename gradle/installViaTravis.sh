@@ -49,11 +49,12 @@ echo "Download Opam file $opamfile"
 wget -q "https://github.com/ocaml/opam/releases/download/$opam/$opamfile"
 
 echo "Install Opam version $opam"
-install -m 755 $opamfile $opamdir/opam
+install -m 755 $opamfile $opamdir
 
 echo "Init Ocaml $ocaml"
 # $dir/opam  init --comp "$ocaml"
-which opam
+ls $opamdir
+export PATH=$opamdir:$PATH
 
 
 echo "Create Infer directory $inferdir"
