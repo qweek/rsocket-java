@@ -24,6 +24,3 @@ install -m 755 $FILE $BINDIR
 
 echo "Add $BINDIR/opam to PATH"
 export PATH=$BINDIR/opam:$PATH
-
-echo "Add $BINDIR/opam to PATH"
-which opam
