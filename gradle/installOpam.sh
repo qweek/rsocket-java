@@ -32,5 +32,9 @@ export PATH=$BINDIR:$PATH                                                   #opa
 
 echo "Config Opam env 2"
 which opam
+which opam >/dev/null 2>&1
+if ! which opam >/dev/null 2>&1; then
+    echo "dependency not found: fuck"
+fi
 
 echo "Config Opam env 3"
