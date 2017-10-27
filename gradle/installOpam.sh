@@ -19,10 +19,12 @@ mkdir -p "$BINDIR"
 echo "Install Opam $OPAM"
 install -m 755 $FILE $BINDIR/opam
 
-$BINDIR/opam config env
+echo "Init Ocaml $OCAML"
+$BINDIR/opam init --help
+$BINDIR/opam init --comp "$OCAML"
 
-# $BINDIR/opam init --comp "$OCAML"
-#
+echo "Config Opam env"
+$BINDIR/opam config env
 
 #echo "Add $BINDIR to PATH"
 #export PATH=$BINDIR:$PATH
