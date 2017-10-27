@@ -17,15 +17,10 @@ echo "Create Bin directory $BINDIR"
 mkdir -p "$BINDIR"
 
 echo "Install Opam $OPAM"
-install -m 755 $FILE $BINDIR
+install -m 755 $FILE $BINDIR/opam
 
-# echo "Install Opam $OPAM"
-# $BINDIR/opam init --comp "$OCAML"
-
-#echo "Add $BINDIR/opam to PATH"
-#$BINDIR config env
+$BINDIR/opam init --comp "$OCAML"
+# $BINDIR config env
 
 echo "Add $BINDIR to PATH"
 export PATH=$BINDIR:$PATH
-
-#ls -l $BINDIR/opam
