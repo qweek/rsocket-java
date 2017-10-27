@@ -21,8 +21,8 @@ sudo: false
 install:
   # chmod +x gradle/installViaTravis.sh
   # gradle/installViaTravis.sh
-  - eval "$(bash gradle/installOpam.sh)"
-  - eval "$(bash gradle/installInfer.sh)"
+  - . gradle/installOpam.sh
+  - . gradle/installInfer.sh
   # gradle/installOpam.sh
   # gradle/installInfer.sh
 
