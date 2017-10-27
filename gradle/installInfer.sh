@@ -17,7 +17,8 @@ echo "Create Lib directory $LIBDIR"
 mkdir -p "$LIBDIR"
 
 echo "Install Infer prefix $LIBDIR"
-./configure --prefix=$LIBDIR && make install # make
+./configure --prefix=$HOME && make install # make
 
 echo "Add Infer to PATH"
 export PATH=`pwd`/infer/bin:$PATH
+which infer

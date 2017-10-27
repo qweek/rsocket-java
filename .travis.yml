@@ -21,8 +21,10 @@ sudo: false
 install:
   # chmod +x gradle/installViaTravis.sh
   # gradle/installViaTravis.sh
-  - gradle/installOpam.sh
-  - gradle/installInfer.sh
+  - eval $(bash gradle/installOpam.sh)
+  - eval $(bash gradle/installInfer.sh)
+  # gradle/installOpam.sh
+  # gradle/installInfer.sh
 
 # script for build and release via Travis to Bintray
 script: gradle/buildViaTravis.sh

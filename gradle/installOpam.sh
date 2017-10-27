@@ -39,23 +39,23 @@ which opam
 
 #echo "Config Opam env 3"
 
-PLATFORM=linux64
-INFER=0.13.0
-IFILE=infer-$PLATFORM-v$INFER
-LIBDIR=$HOME/usr/local/lib
+#PLATFORM=linux64
+#INFER=0.13.0
+#IFILE=infer-$PLATFORM-v$INFER
+#LIBDIR=$HOME/usr/local/lib
 
-echo "Download Infer file $IFILE"
-wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$IFILE.tar.xz"  -O - | tar -xJf - && cd $IFILE
+#echo "Download Infer file $IFILE"
+#wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$IFILE.tar.xz"  -O - | tar -xJf - && cd $IFILE
 
-echo "Compile Infer $INFER"
-./build-infer.sh java
+#echo "Compile Infer $INFER"
+#./build-infer.sh java
 
-echo "Create Lib directory $LIBDIR"
-mkdir -p "$LIBDIR"
+#echo "Create Lib directory $LIBDIR"
+#mkdir -p "$LIBDIR"
 
-echo "Install Infer prefix $LIBDIR"
-./configure --prefix=$HOME/usr/local && make install # make
+#echo "Install Infer prefix $LIBDIR"
+#./configure --prefix=$HOME/usr/local && make install # make
 
-echo "Add Infer to PATH"
-export PATH=`pwd`/infer/bin:$PATH
-which infer
+#echo "Add Infer to PATH"
+#export PATH=`pwd`/infer/bin:$PATH
+#which infer
