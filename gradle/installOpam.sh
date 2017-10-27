@@ -8,7 +8,7 @@ SYS=$(uname -s) # Linux
 OPAM=1.2.2
 OCAML=4.05.0
 FILE=opam-$OPAM-$ARCH-$SYS
-BINDIR=$HOME/usr/local/bin #/opam
+BINDIR=$HOME/usr/local/bin/opam
 ##BINDIR=/usr/local/bin
 
 echo "Download Opam file $FILE"
