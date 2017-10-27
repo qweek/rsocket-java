@@ -24,3 +24,4 @@ $BINDIR/opam init --compiler "$OCAML" --no-setup
 
 echo "Config Opam env"
 # $BINDIR/opam config env
+export PATH=$BINDIR:$PATH
