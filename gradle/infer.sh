@@ -5,7 +5,7 @@
 PLATFORM=linux64
 INFER=0.13.0
 FILE=infer-$PLATFORM-v$INFER
-USRDIR=$HOME/usr/local
+USRDIR=$HOME/usr/local/lib/infer/infer/bin
 
 echo "Download Infer file $FILE"
 wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.xz"  -O - | tar -xJf - && cd $FILE
@@ -17,18 +17,21 @@ wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.x
 # delete travis
 # which ocaml
 
-echo "Create Usr directory $USRDIR"
-mkdir -p "$USRDIR"
+#echo "Create Usr directory $USRDIR"
+#mkdir -p "$USRDIR"
 
-echo "Configure Infer prefix"
-INFER_CONFIGURE_OPTS="--prefix=$USRDIR"
+#echo "Configure Infer prefix"
+#INFER_CONFIGURE_OPTS="--prefix=$USRDIR"
 
 echo "Compile Infer $INFER"
 ./build-infer.sh java
 
 echo "Install Infer"
-make install DESTDIR=$USRDIR
+make install DESTDIR=$HOME
 
 echo "Add Infer to PATH"
 #export PATH=`pwd`/infer/bin:$PATH
-which infer
+type -a infer
+echo "Add Infer to PATH 2"
+export PATH=$USRDIR:$PATH
+# which infer
