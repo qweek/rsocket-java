@@ -14,20 +14,6 @@ env:
     - OPAM_DIR=$HOME/usr/local/bin/opam
     - INFER_DIR=$HOME/usr/local/lib/infer
 
-# clean before cache as per https://docs.travis-ci.com/user/languages/java/#Projects-Using-Gradle
-before_cache:
-  - gradle/cleanup.sh
-# cache between builds
-cache:
-  apt: true
-  directories:
-    - $HOME/.m2               # Maven
-    - $HOME/.gradle/caches/   # Gradle cache
-    - $HOME/.gradle/wrapper/  # Gradle wrapper
-    - $HOME/.opam             # Ocaml
-    - $OPAM_DIR               # Opam
-    - $INFER_DIR              # Infer
-
 # force upgrade Java8 as per https://github.com/travis-ci/travis-ci/issues/4042 (fixes compilation issue)
 addons:
   apt:
@@ -46,6 +32,20 @@ install:
 # script for build and release via Travis to Bintray
 script: #gradle/buildViaTravis.sh
   - ./gradlew build
+
+# clean before cache as per https://docs.travis-ci.com/user/languages/java/#Projects-Using-Gradle
+before_cache:
+  - gradle/cleanup.sh
+# cache between builds
+cache:
+  apt: true
+  directories:
+    - $HOME/.m2               # Maven
+    - $HOME/.gradle/caches/   # Gradle cache
+    - $HOME/.gradle/wrapper/  # Gradle wrapper
+    - $HOME/.opam             # Ocaml
+    - $OPAM_DIR               # Opam
+    - $INFER_DIR              # Infer
 
 after_success:
   - gradle/analyze.sh

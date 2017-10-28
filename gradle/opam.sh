@@ -8,7 +8,7 @@ OPAM=1.2.2
 OCAML=4.05.0
 FILE=opam-$OPAM-$ARCH-$SYS
 
-if [ -d "$OPAM_DIR" ]; then
+if [ -d $OPAM_DIR ]; then
   echo "Use cache $OPAM_DIR"
   exit
 fi

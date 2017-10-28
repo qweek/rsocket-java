@@ -6,7 +6,7 @@ PLATFORM=linux64
 INFER=0.13.0
 FILE=infer-$PLATFORM-v$INFER
 
-if [ -d "$INFER_DIR" ]; then
+if [ -d $INFER_DIR ]; then
   echo "Use cache $INFER_DIR"
   exit
 fi
