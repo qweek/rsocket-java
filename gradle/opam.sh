@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# http://opam.ocaml.org/doc/Install.html#Binarydistribution
-# https://raw.githubusercontent.com/ocaml/opam/master/shell/opam_installer.sh
+# http://opam.ocaml.org/doc/Install.html
 
 ARCH=$(uname -m) # x86_64
 SYS=$(uname -s) # Linux
@@ -18,6 +17,9 @@ mkdir -p "$BINDIR"
 
 echo "Install Opam $OPAM"
 install -m 755 $FILE $BINDIR/opam
+
+echo "Remove temporary file $FILE"
+rm -f $FILE
 
 # echo "Init Ocaml $OCAML"
 # $BINDIR/opam init --compiler "$OCAML" --no-setup
