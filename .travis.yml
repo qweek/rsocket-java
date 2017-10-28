@@ -44,10 +44,11 @@ cache:
   - $HOME/.gradle
   # Opam cache
   - $HOME/.opam
-  - $HOME/usr/local/bin/opam
+  #- $HOME/usr/local/bin/opam
   # Infer cache
-  - $HOME/.infer
-  - $HOME/usr/local/lib/infer
+  - $HOME/usr/local
+  #- $HOME/.infer
+  #- $HOME/usr/local/lib/infer
 
 env:
   global:

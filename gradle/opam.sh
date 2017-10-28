@@ -9,6 +9,17 @@ OCAML=4.05.0
 FILE=opam-$OPAM-$ARCH-$SYS
 BINDIR=$HOME/usr/local/bin/opam
 
+if [ -d "$HOME/usr/local/bin/opam" ]; then
+  echo "Dir $HOME/usr/local/bin/opam exists"
+  if [ -f "$HOME/usr/local/bin/opam/opam" ]; then
+    echo "File $HOME/usr/local/bin/opam/opam exists"
+  else
+    echo "File $HOME/usr/local/bin/opam/opam not exists"
+  fi
+else
+  echo "Dir $HOME/usr/local/bin/opam not exists"
+fi
+
 echo "Download Opam file $FILE"
 wget -q "https://github.com/ocaml/opam/releases/download/$OPAM/$FILE"
 
