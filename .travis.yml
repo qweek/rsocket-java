@@ -1,10 +1,6 @@
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
 sudo: false
 
-dist: trusty
-language: java
-jdk: oraclejdk8
-
 env:
   global:
     - secure: "WBCy0hsF96Xybj4n0AUrGY2m5FWCUa30XR+aVElSOO8d7v7BMypAT8mAd+yC2Y+j8WUGpIv59CqgeK1JrYdR9b3qRKhJmoE1Q92TotrxXMTIC9OKuU51LaaOqGYqx4SqiA2AyaikTFPd8um7KZfUpW/dG4IXySsiJ2OKT1jMUq6TmbWHnAYtjbl3u3WdjBQTIZNMtqG1+H1vIpsWyZrvbB4TWlNzhKBAu/YnlzMtvStrDaF7XrCJ2BQdMomQO18NH2gWxUEvLbQb6ip3wFl9CRe6vID7K1dmFwm08RPt9hRPC9yDahlIy8VvuNcWrP42TV+BVYy8V/hfaIo1pPsDBrtmVyc7YZjXSUM68orDFOkRB35qGkNIaAhy5Yt6G9QfwLXJkDFofW5KMKtDFUzf+j4DwS0CiDMF4k6Qq7YN1tYFXE9R8xa6Gv+wTNHqs4RURbYMS9IlbkhKxNbtyuema2sIUbsIfDezIzLI5BnfH2uli7O6/z0/G0Vfmf6A4q5Olm+7uhzMTI0GKheUIKr16SOxABlrwJtLJftzoKz9hYd3b7C9t61vYzccC3rWYobplwIcK2w50gFHQS8HLeiCjo8yjCx+IRSvAGaZIBPQdHCktrEYCVDUTXOxdaD6k6Ef+ppm8Nn+M+iC8x/G1wYE4x1lDqHw3GfhKsEQmiHL/98="
@@ -13,6 +9,10 @@ env:
     - secure: "UFJEzDEv6H2Qscg9UgZFVJq5oFvq7nQkVoSuGfh5Y4ZhL9PCK5f3Ft9oYEZOQwXaxWD1qivtJjQV3DdBiqsHkrnPrJ0hi3iYVDJo26xLNtu3welFw5Veqmgu2NuwjaDn6cjRFCJRLzpszMUWO1DvfLJTs3LuJDuXEyAKDw9eQgfOakqO4xeloyXgM7xnoXz11rgqtJNU6snjVPHftXNPTHGsNDlTR7SAIbjYwLMbdIKM2qjzrXkg+a94QOz2stnTDz9V5iYNH+3XXCcYxD9nb1Ol1XGWvtDnNGEhtGmylLdjHXwGLHiW2HOXskLzSkm7ASie1WdyHVHZb4X8LjxCy62S0FPevBgat1a443Khx5HCMYR/8dQrlOI82GYTr8n9U6QQE4Li8XLw64DVP9HGs9jdbsfEdlIsiPWqB6ujlwiO6pyfmQGQCgjALA+oD87uDQLcgh+SDYgE0ZwmwGzbjeynZpoCrEE8A1GHhSwkM9khx6EJFacm9XzqoUGK0wB1f8su+51fqPglF1zye80IFA4wOMMAY+KUc9du/vQ98f0lfjsNSOC02CKYxbA5RaakQMAYjirsZraA57xLmCSIGMhhW4wClQdJBww6LLz463yZU4WPwyqU+ZW12aV5dVLb5RWXIbZKmdT74DfZajHvqgTYpb05L5cJl7ApMspUkKk="
     - OPAM_DIR=$HOME/usr/local/bin/opam
     - INFER_DIR=$HOME/usr/local/lib/infer
+
+dist: trusty
+language: java
+jdk: oraclejdk8
 
 # force upgrade Java8 as per https://github.com/travis-ci/travis-ci/issues/4042 (fixes compilation issue)
 addons:
@@ -30,12 +30,12 @@ install:
   - gradle/infer.sh && export PATH=$INFER_DIR/infer/bin:$PATH
 
 # script for build and release via Travis to Bintray
-script: #gradle/buildViaTravis.sh
-  - ./gradlew build
+script: gradle/buildViaTravis.sh
+
+after_script: gradle/analyze.sh
 
 # clean before cache as per https://docs.travis-ci.com/user/languages/java/#Projects-Using-Gradle
-before_cache:
-  - gradle/cleanup.sh
+before_cache: gradle/cleanup.sh
 # cache between builds
 cache:
   apt: true
@@ -46,6 +46,3 @@ cache:
     - $HOME/.opam             # Ocaml
     - $OPAM_DIR               # Opam
     - $INFER_DIR              # Infer
-
-after_success:
-  - gradle/analyze.sh
