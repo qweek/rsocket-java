@@ -19,11 +19,16 @@ sudo: false
 # as per http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
 
 install:
-  - . gradle/opam.sh # source
-  - . gradle/infer.sh # source
+  # . gradle/opam.sh # source
+  - gradle/opam.sh
+  - export PATH=$HOME/usr/local/bin/opam:$PATH
+  # . gradle/infer.sh # source
+  - gradle/infer.sh
+  - export PATH=$HOME/usr/local/lib/infer/infer/bin:$PATH
 
 # script for build and release via Travis to Bintray
-script: gradle/buildViaTravis.sh
+script: #gradle/buildViaTravis.sh
+  - ./gradlew build
 
 after_script:
   - gradle clean

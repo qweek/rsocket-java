@@ -24,5 +24,5 @@ rm -f $FILE
 # echo "Init Ocaml $OCAML"
 # $BINDIR/opam init --compiler "$OCAML" --no-setup
 
-echo "Add Opam to PATH"
-export PATH=$BINDIR:$PATH
+#echo "Add Opam to PATH"
+#export PATH=$BINDIR:$PATH
