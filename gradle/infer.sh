@@ -14,12 +14,13 @@ wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.x
 # TODO: cache
 # TODO: ./configure --prefix=$HOME/usr/local first
 # TODO: set $HOME/usr/local
+# delete travis
 
 echo "Create Usr directory $USRDIR"
 mkdir -p "$USRDIR"
 
 echo "Configure Infer prefix"
-./configure --prefix=$USRDIR
+INFER_CONFIGURE_OPTS="--prefix=$USRDIR"
 
 echo "Compile Infer $INFER"
 ./build-infer.sh java
