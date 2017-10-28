@@ -29,9 +29,9 @@ echo "Compile Infer $INFER"
 echo "Install Infer"
 make install DESTDIR=$HOME
 
-echo "Add Infer to PATH"
+#echo "Add Infer to PATH"
 #export PATH=`pwd`/infer/bin:$PATH
-type -a infer
-echo "Add Infer to PATH 2"
-export PATH=$USRDIR:$PATH
+#type -a infer
+#echo "Add Infer to PATH 2"
+#export PATH=$USRDIR:$PATH
 # which infer
