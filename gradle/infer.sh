@@ -12,9 +12,10 @@ if [ -d $INFER_DIR/infer/bin ]; then
 fi
 
 echo "Download file $FILE"
-wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.xz"  -O - | tar -xJf - && cd $FILE
+wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.xz"  -O - | tar -xJf -
 
 echo "Compile Infer $INFER"
+cd $FILE
 ./build-infer.sh java
 
 echo "Install Infer"
