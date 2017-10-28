@@ -36,7 +36,8 @@ addons:
       - python-software-properties
 
 install:
-  - if [ ! -d $OPAM_DIR ]; then gradle/opam.sh; fi
+  # - if [ ! -d $OPAM_DIR ]; then gradle/opam.sh; fi
+  - gradle/opam.sh
   - export PATH=$OPAM_DIR:$PATH
   - if [ ! -d $INFER_DIR ]; then gradle/infer.sh; fi
   - export PATH=$INFER_DIR/infer/bin:$PATH
@@ -46,7 +47,7 @@ script: #gradle/buildViaTravis.sh
   - ./gradlew build
 
 after_script:
-  - gradlew clean
-  - infer capture -- gradlew test
+  - gradle clean
+  - infer capture -- gradle test
   - infer analyze -a checkers --print-active-checkers --quiet && cat infer-out/bugs.txt
   - infer --no-default-checkers --bufferoverrun --compute-analytics --eradicate --repeated-calls --suggest-nullable --tracing --print-active-checkers --quiet && cat infer-out/bugs.txt
