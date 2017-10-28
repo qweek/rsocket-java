@@ -16,8 +16,7 @@ env:
 
 # clean before cache as per https://docs.travis-ci.com/user/languages/java/#Projects-Using-Gradle
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - gradle/cleanup.sh
 # cache between builds
 cache:
   apt: true
