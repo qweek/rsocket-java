@@ -7,9 +7,8 @@ INFER=0.13.0
 FILE=infer-$PLATFORM-v$INFER
 
 if [ -d "$INFER_DIR" ]; then
-  echo "Dir $INFER_DIR exists"
-else
-  echo "Dir $INFER_DIR not exists"
+  echo "Use cache $INFER_DIR"
+  exit
 fi
 
 echo "Download file $FILE"

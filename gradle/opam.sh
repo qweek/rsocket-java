@@ -9,9 +9,8 @@ OCAML=4.05.0
 FILE=opam-$OPAM-$ARCH-$SYS
 
 if [ -d "$OPAM_DIR" ]; then
-  echo "Dir $OPAM_DIR exists"
-else
-  echo "Dir $OPAM_DIR not exists"
+  echo "Use cache $OPAM_DIR"
+  exit
 fi
 
 echo "Download file $FILE"
