@@ -16,8 +16,8 @@ fi
 echo "Download file $FILE"
 wget -q "https://github.com/ocaml/opam/releases/download/$OPAM/$FILE"
 
-echo "Create directory $OPAM_DIR"
-mkdir -p "$OPAM_DIR"
+#echo "Create directory $OPAM_DIR"
+#mkdir -p "$OPAM_DIR"
 
 echo "Install Opam $OPAM"
 install -m 755 $FILE $OPAM_DIR/opam
