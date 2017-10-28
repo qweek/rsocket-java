@@ -15,6 +15,7 @@ wget -q "https://github.com/facebook/infer/releases/download/v$INFER/$FILE.tar.x
 # TODO: ./configure --prefix=$HOME/usr/local first
 # TODO: set $HOME/usr/local
 # delete travis
+# which ocaml
 
 echo "Create Usr directory $USRDIR"
 mkdir -p "$USRDIR"
@@ -26,7 +27,7 @@ echo "Compile Infer $INFER"
 ./build-infer.sh java
 
 echo "Install Infer"
-make install
+make install DESTDIR=$USRDIR
 
 echo "Add Infer to PATH"
 #export PATH=`pwd`/infer/bin:$PATH
